@@ -1,9 +1,11 @@
 Disconf [![Build Status](https://travis-ci.org/knightliao/disconf.svg?branch=master)](https://travis-ci.org/knightliao/disconf) [![Coverage Status](https://coveralls.io/repos/knightliao/disconf/badge.png?branch=master)](https://coveralls.io/r/knightliao/disconf?branch=master)
 =======
 
-Distributed Configuration Management Platform  
+Distributed Configuration Management Platform(分布式配置管理平台)
 
-分布式配置管理平台
+专注于各种 `分布式系统配置管理` 的`通用组件`/`通用平台`, 提供统一的`配置管理服务`。
+
+![](http://ww3.sinaimg.cn/mw1024/60c9620fjw1esvjzny1rmj20aj061t9a.jpg)
 
 ## 项目信息 ##
 
@@ -12,30 +14,36 @@ Distributed Configuration Management Platform
 
 disconf.git branches and Maven version:
 
-- dev(develop branch): 2.6.22-SNAPSHOT
-- master(stable branch)：2.6.21
+- dev(develop branch): 2.6.24
+- master(stable branch)：2.6.24
 - [更新日志](https://github.com/knightliao/disconf/wiki/updates) 
 
 在Maven Central Repository里查看 [com.baidu.disconf](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.baidu.disconf%22 )
 
-## 它是什么? ##
+## Elegant Usage Preview ##
 
-- 命名为Disconf
-- 专注于各种系统的配置管理的通用组件/通用平台
+![](http://ww4.sinaimg.cn/bmiddle/60c9620fjw1esvksl3qlxj20dk05w75b.jpg)
 
-Disconf可以为各种业务平台提供统一的配置管理服务。
+[查看大图](http://ww1.sinaimg.cn/mw1024/60c9620fjw1esvksl3qlxj20dk05w75b.jpg)
 
-![](http://ww3.sinaimg.cn/bmiddle/60c9620fgw1eidaxpqdy3j20pr0jrgno.jpg)
+![image](http://ww1.sinaimg.cn/bmiddle/60c9620fjw1esvk2031tmj20ie0ivwhk.jpg)
 
-## 当前版本（2.6.21）功能特点 ##
+[查看大图](http://ww1.sinaimg.cn/mw1024/60c9620fjw1esvk2031tmj20ie0ivwhk.jpg)
+
+## 当前版本（2.6.24）功能特点 ##
 
 - **支持配置（配置项+配置文件）的分布式化管理**
 - **配置发布统一化**
-- **极简的使用方式（注解式编程 或 XML代码无代码侵入模式）**
+- **极简的使用方式（注解式编程 或 XML无代码侵入模式）**
 - **低侵入性或无侵入性、强兼容性** 
-- **需要Spring编程环境**
 
 ## 未来版本（完全版）功能特点 ##
+
+**Disconf的功能特点描述图：**
+
+![](http://ww4.sinaimg.cn/bmiddle/60c9620fjw1esvkqmupdfj20fp08udh7.jpg)
+
+[查看大图](http://ww1.sinaimg.cn/mw1024/60c9620fjw1esvkqmupdfj20fp08udh7.jpg)
 
 ### 重要功能特点 ###
 
@@ -47,16 +55,9 @@ Disconf可以为各种业务平台提供统一的配置管理服务。
     - 异构包部署统一化：这里的异构系统是指一个系统部署多个实例时，由于配置不同，从而需要多个部署包（jar或war）的情况（下同）。使用Disconf后，异构系统的部署只需要一个部署包，不同实例的配置会自动分配。特别地，在业界大量使用部署虚拟化（如JPAAS系统，SAE，BAE）的情况下，同一个系统使用同一个部署包的情景会越来越多，Disconf可以很自然地与他天然契合。
     - 异构主备自动切换：如果一个异构系统存在主备机，主机发生挂机时，备机可以自动获取主机配置从而变成主机。
     - 异构主备机Context共享工具：异构系统下，主备机切换时可能需要共享Context。可以使用Context共享工具来共享主备的Context。
-- **极简的使用方式（注解式编程 或 XML代码无代码侵入模式）**：我们追求的是极简的、用户编程体验良好的编程方式。目前支持两种开发模式：基于XML配置或才基于注解，即可完成复杂的配置分布式化。
-- **需要Spring编程环境**
+- **极简的使用方式（注解式编程 或 XML无代码侵入模式）**：我们追求的是极简的、用户编程体验良好的编程方式。目前支持两种开发模式：基于XML配置或者基于注解，即可完成复杂的配置分布式化。
 
 注：配置项是指某个类里的某个Field字段。
-
-**Disconf的功能特点描述图：**
-
-![](http://ww1.sinaimg.cn/bmiddle/60c9620fgw1ehi7wwkdtoj20nw0fz0uh.jpg)
-
-[查看大图](http://ww1.sinaimg.cn/mw1024/60c9620fgw1ehi7wwkdtoj20nw0fz0uh.jpg)
 
 ### 其它功能特点 ###
 
@@ -69,18 +70,17 @@ Disconf可以为各种业务平台提供统一的配置管理服务。
 
 ## 模块架构图  ##
 
-![](http://ww1.sinaimg.cn/bmiddle/60c9620fjw1eqi7cnhjp0j20e4097wfq.jpg)
+![](http://ww2.sinaimg.cn/bmiddle/60c9620fjw1esvk366z6fj20nh0fjtbu.jpg)
 
-[查看大图](http://ww1.sinaimg.cn/mw1024/60c9620fjw1eqi7cnhjp0j20e4097wfq.jpg)
+[查看大图](http://ww2.sinaimg.cn/mw1024/60c9620fjw1esvk366z6fj20nh0fjtbu.jpg)
 
 ### 模块信息###
 
 - **disconf**
 	- [disconf-core](https://github.com/knightliao/disconf/tree/master/disconf-core): 分布式配置基础包模块
 	- [disconf-client](https://github.com/knightliao/disconf/tree/master/disconf-client): 分布式配置客户端模块, 依赖disconf-core包。 用户程序使用它作为Jar包进行分布式配置编程。
-	- [disconf-tool](https://github.com/knightliao/disconf/tree/master/disconf-tool): 分布式配置工具包，依赖disconf-core包。 Disconf-tool是disconf的辅助工具类。
-	- [disconf-web](https://github.com/knightliao/disconf/tree/master/disconf-web): 分布式配置平台服务模块, 依赖disconf-core包。采用SpringMvc+纯HTML方式实现。
-	用户使用它来进行日常的分布式配置管理。
+	- [disconf-tool](https://github.com/knightliao/disconf/tree/master/disconf-tool): 分布式配置工具包，依赖disconf-core包。 Disconf-tool是disconf的辅助工具类, 目前使用不多，建议不使用。
+	- [disconf-web](https://github.com/knightliao/disconf/tree/master/disconf-web): 分布式配置平台服务模块, 依赖disconf-core包。采用SpringMvc+纯HTML方式（前后端分离架构）实现。用户使用它来进行日常的分布式配置管理。
 - **demo**
 	- [disconf-standalone-demo](https://github.com/knightliao/disconf/tree/master/disconf-demos/disconf-standalone-demo): 使用disconf的基于Spring的standalone demo程序
 	- [disconf-standalone-dubbo-demo](https://github.com/knightliao/disconf/tree/dev/disconf-demos/disconf-standalone-dubbo-demo): 集成了disconf和dubbo的基于Spring的standalone demo程序
@@ -105,7 +105,7 @@ Disconf为应用方提供了三个工具，
     <dependency>
         <groupId>com.baidu.disconf</groupId>
         <artifactId>disconf-client</artifactId>
-        <version>2.6.21</version>
+        <version>2.6.24</version>
     </dependency>
 
 ### disconf-web 使用 ###
@@ -168,18 +168,33 @@ APP+环境+版本+ZK查询：
 - [PPT下载: 分布式配置中心服务20140624.pptx](https://github.com/knightliao/disconf/wiki/%E5%88%86%E5%B8%83%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E6%9C%8D%E5%8A%A120140624.pptx)
 - 安全性: Disconf并没有配置审核相关的实现，但这并不意味着Disconf不重视安全性。Disconf未来可以与其它审核系统对接。 
     
-##外界使用##
+##使用情况##
 
-- 联系·讨论
-    - QQ群: 239203866 
-- [润生活](http://www.szzjcs.com/) 
-- [拉勾网](http://www.lagou.com/)
-- [人脉通](http://renmaitong.com/)
+- [百度]（5+条产品线使用）
+- [润生活](http://www.szzjcs.com/) （千万融资，全线产品使用）
+- [拉勾网](http://www.lagou.com/) 
+- [人脉通](http://renmaitong.com/) （目前已B轮融资，4条产品线使用）
 
 ## 他人评价
 
+others:
+
 ![http://ww1.sinaimg.cn/bmiddle/60c9620fjw1ergy58j978j20i302u0t2.jpg](http://ww1.sinaimg.cn/mw1024/60c9620fjw1ergy58j978j20i302u0t2.jpg)
+
+润生活总监：
+
+![http://ww4.sinaimg.cn/bmiddle/60c9620fjw1est6ptf2dlj20ab01udfy.jpg](http://ww4.sinaimg.cn/bmiddle/60c9620fjw1est6ptf2dlj20ab01udfy.jpg)
+
+人脉通后端RD：
+
+![http://ww4.sinaimg.cn/bmiddle/60c9620fjw1est6pzqo68j208k05tjrm.jpg](http://ww4.sinaimg.cn/bmiddle/60c9620fjw1est6pzqo68j208k05tjrm.jpg)
 
 ## 联系与赞助作者
 
 [https://github.com/knightliao/disconf/wiki/sponsor](https://github.com/knightliao/disconf/wiki/sponsor)
+
+## 群·联系·讨论
+
+- disconf技术QQ群: 239203866 
+- java技术QQ群：68373211
+- 我的微信：knightliao
