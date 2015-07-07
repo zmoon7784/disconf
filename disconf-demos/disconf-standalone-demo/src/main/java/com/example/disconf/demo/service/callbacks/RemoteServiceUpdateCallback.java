@@ -32,6 +32,7 @@ public class RemoteServiceUpdateCallback implements IDisconfUpdate {
     	System.out.println();
         remoteService.reload();
         System.out.println();
+        System.out.println();
     }
 
 }
